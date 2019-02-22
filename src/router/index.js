@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import test1 from '@/components/testComp/test'
+import testDirective from '@/components/testComp/test_directive'
+import testRender from '@/components/testComp/test_render'
 Vue.use(Router)
 
 export default new Router({
@@ -10,10 +11,15 @@ export default new Router({
   saveScrollPosition: true,
   transitionOnLoad: false,
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'testDirective',
+    //   component: testDirective
+    // },
     {
       path: '/',
-      name: 'test1',
-      component: test1
+      name: 'testRender',
+      component: testRender
     }
   ]
 })

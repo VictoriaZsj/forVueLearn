@@ -17,6 +17,23 @@ router.afterEach(function(to, from) {
   console.log('成功浏览到to: ', to.path);
   console.log('成功浏览到from: ', from.path);
 });
+
+var Child={
+  render: (createElement) =>{
+    return createElement('p','text')
+  }
+}
+
+// Vue.component('ele', {
+//     render: (createElement) =>{
+//       if(this.$slots.default===undefined){
+//         return createElement('div','没有使用slot')
+//       }else {
+//         return createElement('div',this.$slots.default)
+//       }
+//     }
+//   }
+// )
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

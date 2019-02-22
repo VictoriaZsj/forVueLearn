@@ -16,7 +16,7 @@
     import {mapActions,mapState} from 'vuex'
     import Time from '@/js/time.js'
     export default {
-        name:'test1',
+        name:'testDierctive',
         data(){
             return{
                 message:'some zhengsijie',
