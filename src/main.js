@@ -7,7 +7,7 @@ import store from './store';
 import { sync } from 'vuex-router-sync';
 sync(store, router);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 import "babel-polyfill";
 import FastClick from 'fastclick';
 FastClick.attach(document.body);
@@ -22,8 +22,8 @@ var Child={
   render: (createElement) =>{
     return createElement('p','text')
   }
-}
-
+};
+//
 // Vue.component('ele', {
 //     render: (createElement) =>{
 //       if(this.$slots.default===undefined){
@@ -41,4 +41,4 @@ new Vue({
   store,
   components: { App },
   template: '<App/>'
-})
+});
