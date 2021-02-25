@@ -17,9 +17,9 @@ export default new Router({
     //   component: testDirective
     // },
     {
-      path: '/',
-      name: 'testRender',
-      component: testRender
+      path: '/HelloWorld',
+      name: 'HelloWorld',
+      component: HelloWorld
     }
   ]
 })

@@ -24,16 +24,16 @@ var Child={
   }
 };
 //
-// Vue.component('ele', {
-//     render: (createElement) =>{
-//       if(this.$slots.default===undefined){
-//         return createElement('div','没有使用slot')
-//       }else {
-//         return createElement('div',this.$slots.default)
-//       }
-//     }
-//   }
-// )
+Vue.component('ele', {
+    render: (createElement) =>{
+      if(this.$slots.default===undefined){
+        return createElement('div','没有使用slot')
+      }else {
+        return createElement('div',this.$slots.default)
+      }
+    }
+  }
+)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

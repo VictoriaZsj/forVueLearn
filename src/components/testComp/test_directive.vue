@@ -3,7 +3,7 @@
     指令就是将一些特性应用到DOM上，对底层DOM进行操作
     自定义指令（对DOM进行底层操作）
     <input type="text" v-focus>
-    <div v-testDirective="{msg:'hello',name:'Aresn'}"></div>
+    <div v-test Directive="{msg:'hello',name:'Aresn'}"></div>
     <div class="main" v-clickoutside="handleClose">
       <button @click="show=!show" v-time="timeNow">点击显示下拉菜单</button>
       <div class="dropDown" v-show="show" >
@@ -78,9 +78,25 @@
         methods:{
             handleClose(){
                 this.show=false
-            }
+            },
+            removeWithoutCopy(arr, item) {    
+            let arrNew=[]
+            arr.forEach(i=>{
+                if(i!=item){
+                    arrNew.push(i)
+                }
+            })
+            return arrNew
+          
+        },
+        fn(){
+          let test = [1, 2, 2, 3, 4, 2, 2];    
+           test=this.removeWithoutCopy(test, 2);     
+           return test.length;
+        }
         },
         mounted(){
+           console.log(this.fn())
             // function allpro(obj){
             //     var keys=[];
             //     var values=[];
