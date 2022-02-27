@@ -36,7 +36,7 @@
       }
     },
     render:(createElement)=> {
-      if (this.list1.length) {
+      if (this.list.length) {
           return createElement('ul',this.list.map((item)=>{
             return createElement('li',item);
         }));

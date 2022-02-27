@@ -76,6 +76,7 @@
       ])
     },
     methods:{
+      
       makeColumns:()=>{
         this.currentColumns=this.columns.map((col,index)=>{
           col._sortType='normal';

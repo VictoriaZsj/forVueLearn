@@ -1,3 +1,24 @@
+
+
+
+var example = require('./test.js');//如果参数字符串以“./”开头，则表示加载的是一个位于相对路径
+console.log('111111111:',example); // 5
+console.log(example.addX(1));
+
+console.log(' module.exports:',example.count1); // 1
+console.log( example.printCount1()) // 2
+console.log(' module.exports:',example.count1);
+// main1.js
+
+
+ // index.js
+
+ import  { count, printCount } from './test.js';       
+
+ console.log('222',count)
+//  printCount()
+ console.log('777',count)
+
 var time={
     //获取当前时间戳
     getUnix:function () {
@@ -52,3 +73,4 @@ var time={
     }
 }
 module.exports ={time}
+

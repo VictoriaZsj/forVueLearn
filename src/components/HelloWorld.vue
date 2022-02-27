@@ -84,7 +84,9 @@
 </template>
 
 <script>
+import {review} from '../js/review.js'
 export default {
+  
   name: 'HelloWorld',
   data () {
     return {

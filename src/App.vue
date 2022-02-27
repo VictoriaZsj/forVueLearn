@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-     <img src="./assets/logo.png">
+     <!-- <img src="./assets/logo.png"> -->
     <router-view/>
   </div>
 </template>
 
 <script>
+//  import {test} from './js/test.js'
+    
 export default {
   name: 'App',
   data(){
@@ -53,6 +55,29 @@ export default {
    }
   },
   methods:{
+    PromiseTest(){
+      new Promise(function (resolve, reject) {
+          console.log(1111);
+          resolve(7777);
+          
+      }).then(function (value) {
+          console.log(value); 
+          
+          return new Promise(function(resolve, reject){
+            let aa=  new Promise(function(resolve, reject){
+                resolve(8888);
+                // return 66
+              });
+            resolve(aa);
+           
+          });
+      }).then(function (value) {
+         console.log('22',value); 
+      })
+      },
+      testObj(){
+        
+      },
     handleAddData(){
       this.data.push({
         name:'刘小天',
@@ -60,7 +85,47 @@ export default {
         birthday:'1998-05-30',
         address:'北京市东城区'
       })
+    },
+    test(){
+      let Aobj={
+        name:'zhengsijie',
+        age:19,
+        url:{
+          uuu:'yyyyyyy.com',
+          yyy:'hello'
+        }
+      };
+      let Bobj={
+        name:'xiaozhang',
+        aaa:8
+      }
+     let cObj= Object.assign(Aobj,Bobj);
+     console.log('关于拷贝A：',Aobj)
+     console.log('关于拷贝B：',Bobj)
+     console.log('关于拷贝C：',cObj)
+     
+     Aobj.url.uuu='wwwww.com'
+
+     let yObj={...Aobj}
+     console.log('关于拷贝yObj：',yObj)
+      Aobj.url.yyy='zsj'
+      // console.log('关于拷贝yObj：',yObj)
+
+      let a = {
+    name: "muyiy",
+    book: {
+        title: "You Don't Know JS",
+        price: "45"
     }
+}
+
+
+    }
+    
+  },
+  mounted(){
+    // this.PromiseTest()
+    this.test()
   }
 }
 </script>
@@ -70,8 +135,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
 </style>
